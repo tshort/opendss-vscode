@@ -1,0 +1,30 @@
+{
+    "name": "language-opendss",
+    "displayName": "opendss",
+    "description": "OpenDSS script support",
+    "version": "0.0.1",
+    "publisher": "tshort",
+    "engines": {
+        "vscode": "^1.5.0"
+    },
+    "categories": [
+        "Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "opendss",
+            "aliases": ["OpenDSS", "opendss"],
+            "extensions": ["dss"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "opendss",
+            "scopeName": "source.opendss",
+            "path": "./syntaxes/opendss.tmLanguage.json"
+        }],
+        "snippets": [ {
+            "language": "opendss",
+            "path": "./snippets/snippets.json"
+        }]
+    }
+}

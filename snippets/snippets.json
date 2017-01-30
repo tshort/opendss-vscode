@@ -1,0 +1,38 @@
+{
+  "Line": {
+    "prefix": "li",
+    "body": "New Line.${1:name}  bus1=${2:bus1}  bus2=${3:bus2} linecode=${4:X}  phases=${5:3}  length=${6:1}  units=${7:kft}"
+  },
+  "Line with geometry": {
+    "prefix": "lig",
+    "body": "New Line.${1:name}  bus1=${2:bus1}  bus2=${3:bus2} geometry=${4:X}  phases=${5:3}  length=${6:1}  units=${7:kft}"
+  },
+  "Line with impedances": {
+    "prefix": "liz",
+    "body": "New Line.${1:name}  bus1=${2:bus1}  bus2=${3:bus2} r1=$4 r0=$5 x1=$6 x0=$7 c1=${8:0} c0=${8:0} phases=${9:3}  length=${10:1}  units=${11:kft}"
+  },
+  "Line code": {
+    "prefix": "lc",
+    "body": "New LineCode.${1:name} nphases=${2:3} R1=$3 X1=$4 R0=$5 X0=$6 c1=$7 c0=$8 units=${9:kft} baseFreq=${10:60} normamps=$11"
+  },
+  "Line geometry": {
+    "prefix": "lg",
+    "body": "New LineGeometry.${1:name} nconds=${2:4} nphases=${3:3} reduce=${4:yes}\n~ cond=1 wire=${5:wirename} x=-3.67 h=31.33 units=${6:ft}\n~ cond=2 wire=${5:wirename} x=0     h=31.33 units=${6:ft}\n~ cond=3 wire=${5:wirename} x=3.67  h=31.33 units=${6:ft}\n~ cond=4 wire=${5:wirename} x=0     h=26    units=${6:ft}"
+  },
+  "Load": {
+    "prefix": "ld",
+    "body": "New Load.$1  phases=${2:1}  bus1=$3  kv=${4:0.24}  kW=$5  pf=$6 status=${7:variable} model=${8:4} CVRwatts=${9:0.6} CVRvars=${10:3} Class=${11:1} yearly=${12:Residential} conn=${13:wye}"
+  },
+  "Transformer": {
+    "prefix": "tr",
+    "body": "New  Transformer.${1:name}  phases=${2:3}  windings=${3:2}\n~ Xhl=${4:2.0}   Xht=${5:2.0}   Xlt=${6:1.4}  %noloadloss=${7:0.2}\n~ buses=[${8}]\n~ kVs=[${9:12.47  .12}]     ! ratings of windings\n~ kVAs=[${10:25 25}]\n~ %Rs = [${11:0.6  1.2}]\n~ conns=[${12:delta wye}]"
+  },
+  "Redirect": {
+    "prefix": "re",
+    "body": "Redirect $1.dss"
+  },
+  "Circuit": {
+    "prefix": "ci",
+    "body": "New Circuit.$1  pu=${2:1.0}  r1=$3 x1=$4 r0=$5  x0=$6"
+  }
+}

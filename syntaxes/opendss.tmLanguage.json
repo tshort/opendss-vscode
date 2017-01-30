@@ -1,0 +1,63 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "OpenDSS",
+	"patterns": [
+        {
+            "match": "(?i)^\\S*\\b(new|edit|more|m|select|save|show|solve|enable|disable|plot|reset|compile|set|dump|open|close|redirect|help|quit|next|panel|sample|clear|about|calcv| calcvoltagebases|setkvbase|buildy|get|init|export|fileedit|voltages|currents|powers|seqvolta{}ges|seqcurrents|seqpowers|losses|phaselosses|cktlosses|allocateloads|formedit|totals|capacity|classes|userclasses|zsc|zsc10|zscrefresh|ysc|puvoltages|varvalues|varnames| buscoords|makebuslist|makeposseq|reduce|interpolate|alignfile|top|rotate|vdiff|summary|distribute|di_plot|comparecases|yearlycurves|cd|visualize|closedi|doscmd|estimate|reconductor|_initsnap|_solvenocontrol|_samplecontrols|_docontrolactions|_showcontrolqueue|_solvedirect| _solvepflow|addbusmarker|guids|setloadandgenkv|cvrtloadshapes|nodediff|rephase|setbusxy|updatestorage|obfuscate|latlongcoords|batchedit|pstcalc|variable|reprocessbuses|clearbusmarkers|relcalc|var)\\b",
+            "name": "keyword.control.opendss"
+        },
+        {
+            "match": "(?i)^\\S*(~)",
+            "name": "keyword.control.opendss"
+        },
+        {
+            "match": "(?i)\\b(capacitor|capcontrol|circuit|cndata|energymeter|executive|fault|fuse|gendispatcher|generator|gicline|gictransformer|growthshape|invcontrol|isource|line|linecode|linegeometry|linespacing|load|loadshape|monitor|priceshape|pvsystem|reactor|recloser|regcontrol|relay|sensor|solution|spectrum|storage|storagecontroller|swtcontrol|tcc_curve|transformer|tsdata|tshape|vsconverter|vsource|wiredata|xfmrcode|xycurve)\\.",
+            "name": "entity.name.type.instance.opendss"
+        },
+        {
+            "match": "(?i)\\b(46%pickup|46baseamps|46isqt|47%pickup|action|addtype|algorithm|allocationfactor|allocationfactors|allowduplicates|amps|angle|autobuslist|band|basefreq|basefrequency|basekv|breakertime|buses|c_array|c0|c1|capacitor|capkvar|casename|cktmodel|class|cmatrix|conn|conns|controlmode|csvfile|ct|ctprim|ctratio|cuf|d|daily|datapath|dblfile|deadtime|debugtrace|defaultdaily|defaultyearly|delay|delayoff|demandinterval|dispmode|dispvalue|diverbose|duty|editor|elem|element|emergamps|emerghkva|emergvmaxpu|emergvminpu|enabled|faultrate|feeder|flrise|forceon|frequency|fusecurve|genkw|genlist|genmult|genpf|gmatrix|groundcurve|grounddelayed|groundfast|groundinst|groundtrip|growth|h|harm|harmonic|harmonics|hour|hsrise|interval|inversetime|isc1|isc3|keeplist|kron|kv|kva|kvar|kvarlimit|kvas|kvbase|kvs|kw|kwband|kwemerg|kwlimit|kwnormal|ldcurve|length|like|linecode|ln|loadloss|loadmodel|loadmult|localonly|log|lossregs|lossweight|m|markercode|mask|maxcontroliter|maxiter|maxkvar|maxtap|maxtapchange|mean|minamps|minkvar|mintap|mode|model|monitoredobj|monitoredterm|mult|mva|mvasc1|mvasc3|n|nodes|nodewidth|normamps|normhkva|normvmaxpu|normvminpu|nphases|npts|number|numfast|numharm|numsteps|numtaps|object|offsetting|onsetting|ontime|option|overtrip|overvoltcurve|pctperm|peakcurrent|pf|phasecurve|phasedelayed|phasefast|phaseinst|phases|phasetrip|ppm|ppm_antifloat|ppolar|pricecurve|pricesignal|pt|ptratio|pu|pvfactor|qmult|r|r0|r1|radial|random|ratedcurrent|recloseintervals|reduceoption|repair|reset|residual|revband|reversible|revr|revvreg|revx|rg|rho|rmatrix|rneut|scantype|sec|shaftdata|shaftmodel|shots|sngfile|spectrum|states|status|stddev|stepsize|sub|subname|switch|switchedobj|switchedterm|t_array|tap|tapdelay|taps|temporary|terminal|thermal|time|tolerance|tracecontrol|transformer|trapezoidal|type|ueregs|ueweight|undertrip|undervoltcurve|units|userdata|usermodel|variable|vipolar|vmax|vmaxpu|vmin|vminemerg|vminnorm|vminpu|voltagebases|voltoverride|vpu|vreg|wdg|winding|windings|x|x0|x0r0|x1|x1r1|xd|xdp|xdpp|xfkva|xg|xhl|xht|xl|xlt|xmatrix|xneut|xscarray|year|yearly|zonelist|zonelock|buses|currents|convergence|elements|faults|generators|losses|meters|powers|voltages|zone|taps|isolated|ratings|variables|loops|busflow|lineconstants|y|yprim|controlqueue|topology|mismatch|kvbasemismatch|deltav|querylog|controlled)\\S*=",
+            "name": "variable.other.opendss"
+        },
+        {
+            "match": "(?i)(bus[12]?(?:\\.[0-9])*)",
+            "name": "variable.other.opendss"
+        },
+        {
+            "match": "(?i)%(growth|imag|mag|mean|normal|r|rs|stddev|noloadloss)\\b",
+            "name": "variable.other.opendss"
+        },
+        {
+            "match": "\\b([0-9]+)\\b",
+            "name": "constant.numeric.opendss"
+        },
+        {
+            "include": "#comments"
+        }
+	],
+	"repository": {
+        "comments": {
+          "patterns": [
+            {
+              "begin": "!",
+              "beginCaptures":{ "0":{ "name": "punctuation.definition.comment.opendss"}},
+              "end": "\\n",
+              "name": "comment.line.bang.opendss"
+            },
+            {
+              "begin": "//",
+			  "beginCaptures":{ "0": {"name": "punctuation.definition.comment.opendss"}},
+              "end": "\\n",
+              "name": "comment.line.double-slash.opendss"
+            },
+            {
+              "begin": "/\\*",
+			  "beginCaptures": {"0": {"name": "punctuation.definition.comment.begin.opendss"}},
+              "end": "\\*/",
+			  "endCaptures": {"0": {"name": "punctuation.definition.comment.end.opendss"}},
+              "name": "comment.block.opendss"
+            }
+          ]
+		}
+	},
+	"scopeName": "source.opendss"
+}
