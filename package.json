@@ -2,14 +2,25 @@
     "name": "language-opendss",
     "displayName": "opendss",
     "description": "OpenDSS script support",
-    "version": "0.0.1",
+    "version": "0.1.0",
     "publisher": "tshort",
     "engines": {
         "vscode": "^1.5.0"
-    },
-    "categories": [
-        "Languages"
-    ],
+    },	
+    "license": "SEE LICENSE IN LICENSE",
+	"bugs": {
+		"url": "https://github.com/tshort/opendss-vscode/issues"
+	},
+	"homepage": "https://github.com/tshort/opendss-vscode/blob/master/README.md",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/tshort/opendss-vscode.git"
+	},
+	"icon": "images/julia-logo.svg",
+	"categories": [
+		"Languages",
+		"Snippets"
+	],
     "contributes": {
         "languages": [{
             "id": "opendss",
@@ -22,6 +33,19 @@
             "scopeName": "source.opendss",
             "path": "./syntaxes/opendss.tmLanguage.json"
         }],
+		"commands": [
+			{
+				"command": "language-julia.executeJuliaCodeInREPL",
+				"title": "opendss: Execute code via Julia"
+			}
+		],
+		"keybindings": [
+			{
+				"command": "language-julia.executeJuliaCodeInREPL",
+				"key": "ctrl+Enter",
+				"when": "editorTextFocus && editorLangId == opendss"
+			}
+		],
         "snippets": [ {
             "language": "opendss",
             "path": "./snippets/snippets.json"
