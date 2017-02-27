@@ -2,7 +2,7 @@
     "name": "language-opendss",
     "displayName": "opendss",
     "description": "OpenDSS script support",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "publisher": "tshort",
     "engines": {
         "vscode": "^1.5.0"
