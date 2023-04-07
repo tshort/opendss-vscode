@@ -3,6 +3,9 @@
 	"name": "OpenDSS",
 	"patterns": [
         {
+          "include": "#comments"
+        },
+        {
             "match": "(?i)^\\S*\\b(new|edit|more|m|select|save|show|solve|enable|disable|plot|reset|compile|set|dump|open|close|redirect|help|quit|next|panel|sample|clear|about|calcv| calcvoltagebases|setkvbase|buildy|get|init|export|fileedit|voltages|currents|powers|seqvolta{}ges|seqcurrents|seqpowers|losses|phaselosses|cktlosses|allocateloads|formedit|totals|capacity|classes|userclasses|zsc|zsc10|zscrefresh|ysc|puvoltages|varvalues|varnames| buscoords|makebuslist|makeposseq|reduce|interpolate|alignfile|top|rotate|vdiff|summary|distribute|di_plot|comparecases|yearlycurves|cd|visualize|closedi|doscmd|estimate|reconductor|_initsnap|_solvenocontrol|_samplecontrols|_docontrolactions|_showcontrolqueue|_solvedirect| _solvepflow|addbusmarker|guids|setloadandgenkv|cvrtloadshapes|nodediff|rephase|setbusxy|updatestorage|obfuscate|latlongcoords|batchedit|pstcalc|variable|reprocessbuses|clearbusmarkers|relcalc|var)\\b",
             "name": "keyword.control.opendss"
         },
@@ -29,9 +32,6 @@
         {
             "match": "\\b([0-9]+)\\b",
             "name": "constant.numeric.opendss"
-        },
-        {
-            "include": "#comments"
         }
 	],
 	"repository": {
@@ -52,7 +52,7 @@
             {
               "begin": "/\\*",
 			  "beginCaptures": {"0": {"name": "punctuation.definition.comment.begin.opendss"}},
-              "end": "\\*/",
+              "end": "\\*/.*",
 			  "endCaptures": {"0": {"name": "punctuation.definition.comment.end.opendss"}},
               "name": "comment.block.opendss"
             }
